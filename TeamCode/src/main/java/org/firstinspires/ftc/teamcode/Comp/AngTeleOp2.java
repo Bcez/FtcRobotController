@@ -6,7 +6,6 @@ package org.firstinspires.ftc.teamcode.Comp;
 
 import static android.os.SystemClock.sleep;
 
-import com.acmerobotics.dashboard.config.Config;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -17,7 +16,7 @@ import org.firstinspires.ftc.teamcode.Hardware.HardwareAngRobot;
 
 import java.util.ArrayList;
 // test also hello play hollow knight
-@Config
+
 @TeleOp(name="AngTeleOp2", group="Comp")
 public class AngTeleOp2 extends LinearOpMode {
 
@@ -145,6 +144,8 @@ public class AngTeleOp2 extends LinearOpMode {
             if (Math.abs(gamepad2.right_stick_y) > 0)
                 robot.servo2.setPosition(spinnyTime * 1.5);
 
+            if(Math.abs(gamepad2.right_stick_y) == 0 )
+                robot.servo2.setPosition(spinnyTime*0);
             //down mode
             if (Math.abs(gamepad2.right_stick_y) < 0)
                 robot.servo2.setPosition(spinnyTime * -1.5);
